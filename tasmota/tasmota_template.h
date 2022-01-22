@@ -43,6 +43,8 @@ enum UserSelectablePins {
   GPIO_DHT11, GPIO_DHT22, GPIO_SI7021, GPIO_DHT11_OUT,  // DHT11, DHT21, DHT22, AM2301, AM2302, AM2321
   GPIO_DSB, GPIO_DSB_OUT,              // DS18B20 or DS18S20
   GPIO_WS2812,                         // WS2812 Led string
+  GPIO_WS2801_CLK,                     // WS2801 CLOCK
+  GPIO_WS2801_DAT,                     // WS2801 DATA
   GPIO_MHZ_TXD, GPIO_MHZ_RXD,          // MH-Z19 Serial interface
   GPIO_PZEM0XX_TX, GPIO_PZEM004_RX, GPIO_PZEM016_RX, GPIO_PZEM017_RX, // PZEM Serial Modbus interface
   GPIO_SAIR_TX, GPIO_SAIR_RX,          // SenseAir Serial interface
@@ -244,6 +246,7 @@ const char kSensorNames[] PROGMEM =
   D_SENSOR_DHT11 "|" D_SENSOR_AM2301 "|" D_SENSOR_SI7021 "|" D_SENSOR_DHT11 "_o|"
   D_SENSOR_DS18X20 "|" D_SENSOR_DS18X20 "_o|"
   D_SENSOR_WS2812 "|"
+  D_SENSOR_WS2801_CLK "|" D_SENSOR_WS2801_DAT "|"
   D_SENSOR_MHZ_TX "|" D_SENSOR_MHZ_RX "|"
   D_SENSOR_PZEM0XX_TX "|" D_SENSOR_PZEM004_RX "|" D_SENSOR_PZEM016_RX "|" D_SENSOR_PZEM017_RX "|"
   D_SENSOR_SAIR_TX "|" D_SENSOR_SAIR_RX "|"
@@ -575,6 +578,10 @@ const uint16_t kGpioNiceList[] PROGMEM = {
   AGPIO(GPIO_WS2812) + MAX_RMT,// WS2812 Led string, using RMT on ESP32
 #endif  // NEO_HW_P9813
 #endif
+#ifdef USE_WS2801
+  AGPIO(GPIO_WS2801_CLK),     // WS2801 CLOCK
+  AGPIO(GPIO_WS2801_DAT),     // WS2801 DATA
+#endif  // USE_WS2801
 #ifdef USE_ARILUX_RF
   AGPIO(GPIO_ARIRFRCV),       // AriLux RF Receive input
   AGPIO(GPIO_ARIRFSEL),       // Arilux RF Receive input selected

@@ -623,6 +623,8 @@
 #define D_SENSOR_I2S_IN_CLK    "I2S In Clk"
 #define D_SENSOR_I2S_IN_SLCT   "I2S In Slct"
 #define D_SENSOR_WS2812        "WS2812"
+#define D_SENSOR_WS2801_CLK    "WS2801 CLK"
+#define D_SENSOR_WS2801_DAT    "WS2801 DAT"
 #define D_SENSOR_DFR562        "MP3 Speler"
 #define D_SENSOR_IRSEND        "IRsend"
 #define D_SENSOR_SWITCH        "Switch"     // Suffix "1"
